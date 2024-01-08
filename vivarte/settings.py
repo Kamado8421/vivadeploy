@@ -17,7 +17,7 @@ DEBUG = True
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    'apps.auth_user',
     
 ]
 
