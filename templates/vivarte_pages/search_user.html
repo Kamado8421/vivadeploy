@@ -1,0 +1,41 @@
+<!-- search_user.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/search_user.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div class="content">
+        <h2 class="title">Buscar usuário</h2>
+        <div class="search">
+            <form action="">
+                <input type="text" placeholder="Buscar usuário e artes por tag" required>
+                <button class="material-symbols-outlined">search</button>
+            </form>
+        </div>
+        <h3 class="title">Usuários</h3>
+        <div class="users-found grid">
+            {% for u in  users %}            
+                <div class="user-found">
+                    <img src="{{ info.url_profile }}" alt="">
+                    <p><span class="tag">@</span>{{ u.username }}</p>
+                </div>
+            {% endfor %}
+        </div> 
+        <div class="line" style="width: 70%;"></div>
+        <h3 class="title">Publicações</h3>
+        <div class="post-found grid">
+            {% for post in posters %}
+                <div class="post">
+                    <img src="{{ post.url_img }}" alt="">
+                    <p><span class="tag">@</span>{{ post.user.username }}</p>
+                </div>             
+            {% endfor %}
+        </div>
+    </div>
+{% endblock main_content %}

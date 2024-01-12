@@ -1,0 +1,237 @@
+.search form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search form input, .search form button {
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0 12px 0 12px;
+}
+
+.search form button {
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   cursor: pointer;
+}
+
+.search form input {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 60%;
+}
+
+.my-events {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.my-events p {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: yellow;
+    padding: 5px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--black-color);
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.btn-action {
+    transition: .3s;
+}
+
+.btn-action:hover{
+    margin-top: -10px;
+    opacity: 0.7;
+}
+
+#add-event {
+    background-color: #8ee947;
+    margin-left: 30px;
+}
+
+.help {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.help p {
+    width: 55%;
+    font-size: 12px;
+    text-align: center;
+}
+
+.events, .box-events {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+}
+
+
+.event{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(90deg, #ffde59, #ff914d);
+    width: 240px;
+    padding: 23px 10px 23px 10px;
+    border-radius: 10px;
+    border: 1.5px dashed var(--black-color);
+    align-items: center;
+    transition: .3s;
+}
+
+.event:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.header-event {
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 2px #0000002f;
+}
+
+.header-my-event {
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 2px #0000002f;
+}
+
+.event p {
+    text-align: center;
+    padding: 10px;
+}
+
+.event-user, .event-date {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.click {
+    font-size: 10px;
+}
+
+/* criar evento */
+.form {
+    margin-top: 50px;
+}
+
+
+.form form {
+    background-color: var(--orange-color);
+   width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.in {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.in label {
+    font-weight: bold;
+    color: var(--black-color);
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.in input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+textarea {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.btn-save {
+    padding: 10px;
+    background-color: #8ee947;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    padding: 10px;
+    background-color: yellow;
+    border: none;
+    font-weight: bold;
+}
+
+.my-event {
+    background-image: linear-gradient(90deg, #ffde59, #ff914d);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.my-event:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 900px){
+  .help {
+    width: 90%;
+  }
+  
+  .help p {
+    width:100%;
+  }
+  
+  .events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form {
+    width: 110%;
+  }
+  
+  .form form {
+    width: auto;
+  }
+  
+  .box-events {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 100%;
+    padding: 5px;
+    margin-top: 30px;
+  }
+}

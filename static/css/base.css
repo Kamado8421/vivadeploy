@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s;
+}
+
+:root {
+    --orange-color: #FF914C;
+    --yellow-color: #FDE791;
+    --blue-color: #0b83c9;
+    --red-color: #FF5657;
+    --black-color: #444444;
+} 
+
+body {
+    background-color: var(--yellow-color);
+}
+
+.container {
+    display: flex;
+}
+
+.menu {
+    background-color: var(--orange-color);
+    color: #fff;
+    padding: 15px;
+    overflow: auto; 
+    font-size: 14px;
+    height: 100vh;
+    position: fixed;
+    width: 230px;
+    max-width: 240px;
+    transition: .4s;
+} 
+
+.menu::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.back  {
+    border: 1px solid var(--black-color);
+    color: var(--black-color);
+    transition: .3s;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.back:hover{
+    background-color: var(--black-color);
+    color: white;
+    cursor: pointer;
+}
+
+
+.menu .profile-box {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    transition: .3s;
+}
+
+.profile-box:hover {
+    cursor: pointer;
+    color: var(--yellow-color);
+    font-size: 15px;
+}
+
+.profile-box .profile-img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    border-bottom: 0.5px solid #fff;
+    transition: .3s;
+}
+
+.links:hover {
+    cursor: pointer;
+    background-color: #fba068;
+    color: var(--yellow-color);
+    font-size: 15px;
+}
+
+.links .link {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.material-symbols-outlined {
+    margin-left: 10px;
+}
+
+.i {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.support {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+    transition: .3s;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+.support-link {
+    margin-left: 10px;
+}
+
+.support:hover {
+    cursor: pointer;
+    background-color: #fba068;
+    color: var(--yellow-color);
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+main {
+    height: auto;
+    width: 100%;
+    transition: .4s;
+    padding-left: 260px;
+    margin-bottom: 100px;
+}
+
+.menu-toggle {
+    padding: 2px 5px 2px 5px;
+}
+
+.menu-toggle:hover {
+    cursor: pointer;
+    background-color: #fba068;
+    color: var(--yellow-color);
+    border-radius: 10px;
+}
+
+.content, .content02, .content03 {
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+.title {
+    color: var(--black-color);
+    margin-top: 20px;
+}
+
+.tag {
+    color: yellow;
+}
+
+.line {
+    height: 0.5px;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.manu-resp {
+    display: none;
+}
+
+.btn-menu-resp {
+    z-index: 9999;
+    position: fixed;
+}
+
+/* ------------------- Responsividade --------------------*/
+@media screen and (max-width: 1100px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-resp {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--orange-color);
+        transition: .3s;
+        z-index: 9996;
+        height: 100%;
+        position: fixed;
+        opacity: 0.9;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .menu-resp.close {
+        margin-left: -250px;
+        transition: .3s;
+    }
+
+    main {
+        padding-left: 0;
+        width: 90%;
+    }
+
+    
+}
+
+@media screen and (max-width: 1400px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    
+}
+
+
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+
+} 

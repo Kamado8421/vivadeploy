@@ -1,0 +1,42 @@
+<!-- galery_virtual.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/galery_virtual.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div class="content">
+        <h2 class="title">Galeria Virtual</h2>
+        <p class="help">Veja publicações do vivarte de forma global!!</p>
+        <div class="box-publications">
+            <div class="header-lights">
+                <img id="l1" src="https://telegra.ph/file/459837a22419581d97486.png" alt="">
+                <img id="l2" src="https://telegra.ph/file/459837a22419581d97486.png" alt="">
+                <img id="l3" src="https://telegra.ph/file/459837a22419581d97486.png" alt="">
+                <img id="l4" src="https://telegra.ph/file/459837a22419581d97486.png" alt="">
+                <img id="l5" src="https://telegra.ph/file/459837a22419581d97486.png" alt="">
+                <img id="l6" src="https://telegra.ph/file/459837a22419581d97486.png" alt="">
+            </div>
+            <div class="posts-global">
+                {% for post in posters %}
+                    <div class="area-post">
+                        <div class="mini-box-pub">
+                            <div class="box-post">
+                                <a href="#"><img src="{{ post.url_img }}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="info-pub">
+                            <img src="{{ info.url_profile }}" alt="">
+                            <p class="username-pub">@{{ post.user.username }}</p>
+                        </div>
+                    </div>           
+                {% endfor %}                
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

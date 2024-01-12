@@ -1,0 +1,191 @@
+
+.help {
+    color: var(--black-color);
+    font-size: 12px;
+    text-align: center;
+}
+
+.expos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.expo {
+    background-color: var(--orange-color);
+    border-radius: 10px;
+    width: 60%;
+    padding: 22px;
+    border: 1px solid var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.perfil-expo {
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 40px;
+    border: 1px solid var(--black-color);
+    margin-right: 10px;
+}
+
+.info-expo {
+    background-color: #FFDE59;
+    height: 235px;
+    width: 60%;
+    padding: 0 10px 0 10px;
+    border: 1px solid var(--black-color);
+}
+
+.info-expo .top-info-expo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.top-info-expo .text {
+
+    display: flex;
+    align-items: center;
+}
+
+.text .username-expo {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--black-color);
+}
+
+.likes {
+    font-weight: bold;
+    color: #fff;
+    padding: 5px;
+    width: 32px;
+    height: 22px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    background-color: var(--orange-color);
+    border-radius: 5px;
+}
+
+.line {
+    width: 85%;
+    margin: 10px auto;
+}
+
+.categorys {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.category {
+    font-size: 11px;
+    background-color: #BEB7B2;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.expo .post {
+    height: 235px;
+    width: 235px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid var(--black-color);
+}
+
+.legend {
+    font-size: 12px;
+    text-align: justify;
+    padding: 8px;
+    height:24%;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.liker, .status {
+    padding: 2px 10px 2px 10px;
+    width: 100px;
+    text-align: center;
+    border: 1px dashed var(--black-color);
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.liker {
+    background-color: #fff;
+}
+
+.follow {
+    background-color: #8bafef;
+}
+
+.following {
+    background-color: #FFBD59;
+}
+
+@media screen and (max-width: 900px){
+  .help {
+    margin-top: 20px;
+  }
+  
+  .expos {
+    width: 94%;
+    margin-left: -10px;
+  }
+  
+  .expo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-expo {
+    width: 200px;
+    margin-top: 10px;
+    height: auto;
+  }
+  
+  .perfil-expo {
+    height: 30px;
+    width: 30px;
+  }
+  
+  .top-info-expo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post {
+    height: 200px;
+    width: 200px;;
+  }
+  
+  .categorys {
+    display: none;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .liker {
+    margin-bottom: 5px;
+  }
+}

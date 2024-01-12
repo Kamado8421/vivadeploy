@@ -1,0 +1,415 @@
+/* ########### main ########## */
+
+.profile-content {
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-username {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--orange-color);
+    padding: 7px 12px 7px 12px;
+    border-radius: 50px;
+    width: 250px;
+
+}
+
+.info-profile {
+    width: 60%;
+}
+
+.edit {
+    padding: 4px;
+}
+
+.edit:hover {
+    cursor: pointer;
+    color: var(--yellow-color);
+    border-radius: 5px;
+    background-color: #fba068;
+}
+
+
+
+.line-p  {
+    width: 500px;
+    height: 0.5px;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.img-user {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-user img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 5px;
+    transition: .3s;
+}
+
+.img-user img:hover {
+    height: 275px;
+    width: 275px;
+    object-fit: cover;
+}
+
+.biografy {
+    display: flex;
+    flex-direction: column;
+    background-color: #fba068;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.biografy .info-bio {
+    display: flex;
+    align-items: center;
+}
+
+.biografy .info-bio p, #content02  {
+    background-color: #c2c2c2;
+    padding: 5px 10px 5px 10px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.bio {
+    text-align: justify;
+    font-size: 14px;
+}
+
+.bio-title {
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+.engajamento {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.engajamento p {
+    background-color: var(--orange-color);
+    padding: 5px 10px 5px 10px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 120px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#status-true {
+    background-color: #bfec9d;
+    border: 1px solid var(--black-color);
+    cursor: pointer;
+}
+
+#status-false {
+    background-color: #e97a7a;
+    border: 1px solid var(--black-color);
+    cursor: pointer;
+}
+
+.line-pub {
+    width: 98%;
+    margin: 0 auto;
+    background-color: var(--black-color);
+    height: 0.5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* gpt */
+
+.media {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria quatro colunas */
+    gap: 20px; /* Espaçamento entre as imagens */
+}
+
+.media .mostra img {
+    width: 250px; /* Garante que as imagens ocupem 100% da largura da coluna */
+    height: 250px; /* Mantém a proporção original da imagem */
+    border-radius: 5px; /* Adiciona borda arredondada às imagens (opcional) */
+    object-fit: cover;
+}
+
+.show-post {
+    z-index: 9999;
+    background-color: #ffffff8f;
+    display: flex; 
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    top: 0;
+    align-items: center;
+    position: absolute;
+}
+
+
+.set-info-post {
+    display: flex;
+    width: 60%;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.close {
+    text-align: right;
+    padding: 10px;
+}
+
+.react{
+    display: flex;
+    align-items: center;
+    background-color: #c2c2c2;
+    width: 250px;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.you {
+    display: flex;
+    align-items: center;
+    background-color: #666666;
+    width: 250px;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 5px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.help-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.help-box .help {
+    font-size: 12px;
+    width: 75%;
+    text-align: center;
+    margin: o auto;
+}
+
+.i-r {
+    margin-left: -15px;
+}
+
+.content02 .profile-edit img {
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #fff;
+
+}
+
+.profile-edit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   
+}
+
+.form {
+    margin-top: 50px;
+}
+
+
+.form form {
+    background-color: var(--orange-color);
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.in {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.in label {
+    font-weight: bold;
+    color: var(--black-color);
+    margin-top: 10px;
+}
+
+.in input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+textarea {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.btn-save {
+    padding: 10px;
+    background-color: #8ee947;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    padding: 10px;
+    background-color: yellow;
+    border: none;
+    font-weight: bold;
+}
+
+
+
+.btn-close {
+    padding: 10px;
+    background-color: #e94747;
+    border: none;
+    font-weight: bold;
+}
+
+#new-pub {
+    background-color: #8ee947;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px){
+  .container {
+    overflow-x: hidden;
+  }
+  .img-user {
+    order: -1;
+    margin-bottom: 20px;
+  }
+  .img-user img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .img-user img:hover {
+    height: 115px;
+    width: 115px;
+    object-fit: cover;
+}
+  
+  .profile-content {
+    flex-direction: column;
+    width: 105%;
+  }
+  
+  .line-p, line-pub {
+    display: none;
+  }
+ 
+  
+  .info-profile {
+    width: 100%;
+  }
+  
+  .box-username {
+    margin: auto;
+    font-size: 12px;
+  }
+  
+  .media {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+  
+  .media .mostra img {
+
+    width: 300px; /* Garante que as imagens ocupem 100% da largura da coluna */
+
+    height: 300px; /* Mantém a proporção original da imagem */
+    border-radius: 5px; /* Adiciona borda arredondada às imagens (opcional) */
+    object-fit: cover;
+  }
+  
+  .mostra {
+    margin: auto;
+  }
+  
+  .react{
+    width: 300px;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+    .form {
+
+    width: 110%;
+
+  }
+  
+  .form form {
+    width: auto;
+  }
+  
+  .box-events {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 100%;
+    padding: 5px;
+    margin-top: 30px;
+  }
+  
+  .help {
+    width: 95%;
+    margin-left: 40px;
+    margin-top: -25px;
+  }
+  .you {
+    margin-top: 20px;
+  }
+  
+  .profile-edit, .you {
+    margin-left: 50px;
+  }
+}

@@ -1,0 +1,134 @@
+<!-- profile.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/profile.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div id="content-profile" class="content">
+        <h2 class="title">Perfil</h2>
+        <div class="profile-content">
+            <div class="info-profile">
+                <div class="box-username">
+                    <p class="username"><span class="tag">@</span>{{user.username}}</p>
+                    <span class="material-symbols-outlined edit" onclick="toGoSettings()">brush</span>
+                </div>
+                <div class="line-p"></div>
+                <div class="biografy">
+                    <h3 class="bio-title">Biografia</h3>
+                    <div class="info-bio">
+                        <p>Nome: {{user.first_name}} {{user.last_name}}</p>
+                        <p>Nascimento: {{info.birth}}</p>
+                    </div>
+                    <p class="bio">{{info.biography}}</p>
+                </div>
+                <div class="engajamento">
+                    <p>Seguindo: <span>{{info.following}}</span></p>
+                    <p>Seguidore: <span>{{info.followers}}</span></p>
+                    <p>Publicações <span>{{info.quant_posts}}</span></p>
+                    {% if not search %}
+                        <p id="new-pub">Nova publicação</p>
+                    {% elif search and not following %}
+                        <p id="status-false">Seguir</p>
+                    {% elif search and following %}
+                        <p id="status-true">Seguindo</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="img-user">
+                <img src="{{info.url_profile}}" alt="you">
+            </div>
+        </div>
+        <div class="line-pub"></div>
+        <div class="Publications">
+            <h3 class="title">Publicações</h3>
+            <div class="media">
+                {% for post in posters %}
+                    <div class="mostra">
+                        <img src="{{ post.url_img }}" alt="">
+                        <div class="react"><span class="material-symbols-outlined edit i-r">favorite</span>Curtir - <span class="quant-like">23</span></div>
+                    </div>               
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" id="content-settings" class="content02">
+        <h2 class="title">Editar Perfil</h2>
+        <div class="profile-edit"><img src="{{info.url_profile}}" alt=""></div>
+
+        <p class="you"><span class="tag">@</span>{{user.username}}</p>
+
+        <div class="help-box">
+            <p class="help">Bem-vindo à sua área de edição de perfil! Este é o lugar onde você pode personalizar e atualizar as informações do seu perfil para refletir quem você é. Sinta-se à vontade para modificar detalhes como foto, biografia, interesses e outras configurações que ajudam a construir a sua identidade online. Não se esqueça de salvar as alterações antes de sair. Estamos ansiosos para ver como você tornará o seu perfil único e autêntico!</p>
+        </div>
+
+        <div class="form">
+            <form action="{% url 'my_profile' %}" method="POST"> {% csrf_token %}
+                <div class="in">
+                    <label for="img-edit-profile">Foto de Perfil (Máx 10MB)</label>
+                    <input type="file" accept="image/*" maxlength="10000000" id="img-edit-profile" name="img_edit_profile">
+                </div>
+                <div class="in">
+                    <label for="name">Nome</label>
+                    <input type="text" value="{{user.first_name}}" id="name" name="first_name" maxlength="50" placeholder="Ex: João Pedro">
+                </div>
+                <div class="in">
+                    <label for="age">Sobrenome</label>
+                    <input type="text" value="{{user.last_name}}" id="age" name="last_name" placeholder="Ex: Martins">
+                </div>
+                <div class="in">
+                    <label for="age">Data de Nascimento</label>
+                    <input type="date" value="{{info.birth}}" id="age" name="age" required>
+                </div>
+                <div class="in">
+                    <label for="email">Email</label>
+                    <input type="email" value="{{user.email}}" id="email" name="email" placeholder="exemplo@e-mail.com">
+                </div>
+                <div class="in">
+                    <label for="biografy">Biografia</label>
+                    <textarea name="biography" id="biografy" cols="30" rows="8" maxlength="200" placeholder="Sua bio">{{info.biography}}</textarea>
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-save" value="Salvar" style="cursor: pointer;">
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-cancel" onclick="toGoMyProfile()" value="Cancelar e voltar" style="cursor: pointer;">
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-close" value="Sair da Conta" style="cursor: pointer;">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toGoSettings(){
+            var content = document.getElementById('content-profile');
+            var content02 = document.getElementById('content-settings');
+        
+            content.style.display = 'none';
+            content02.style.display = 'flex';
+            content02.style.flexDirection = 'column';
+        }
+        
+        function toGoMyProfile(){
+            var content = document.getElementById('content-profile');
+            var content02 = document.getElementById('content-settings');
+        
+            content02.style.display = 'none';
+            content.style.display = 'flex';
+            content.style.flexDirection = 'column';
+        
+        }
+    </script>
+
+    <script src="{% static 'js/base.js' %}"></script>
+
+{% endblock main_content %}
+

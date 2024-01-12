@@ -1,0 +1,46 @@
+<!-- feed.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/feed.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div class="content">
+        <h2 class="title">Exposições</h2>
+        <p class="help">Artes recentes de seus amigos talentosos abaixo. Atualize a página para o feed mostrar publicações recentes.</p>
+        <div class="expos">
+
+            {% for post in posters %}        
+                <div class="expo">
+                    <img class="post" src="{{ post.url_img }}" alt="">
+                    <div class="info-expo">
+                        <div class="top-info-expo">
+                            <div class="text">
+                                <img src="{{ info.url_profile }}" alt="" class="perfil-expo">
+                                <p class="username-expo">{{ post.user.username }}</p>
+                            </div> 
+                            <div class="count">
+                                <p class="likes">{{ post.likes }}</p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="categorys">
+                            <p class="category">{{ post.tag_category }}</p>
+                            <p class="category">{{ post.tag_category }}</p>
+                        </div>
+                        <p class="legend">{{ post.legend }}</p>
+                        <div class="actions">
+                            <span class="liker">Curtir</span>
+                            <span class="status following">Seguindo</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

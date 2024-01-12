@@ -1,0 +1,103 @@
+<!-- events_global.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/events_global.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div id="content-main" class="content">
+        <h2 class="title">Eventos</h2>
+        <div class="search">
+            <form action="#">
+                <input type="text" placeholder="Buscar evento por ID" required>
+                <button class="material-symbols-outlined">search</button>
+            </form>
+        </div>
+        <div class="my-events">
+            <p class="btn-action" onclick="toShowMyEvents()" id="my-events"><span class="material-symbols-outlined icon">event</span>Meus eventos</p>
+            <p class="btn-action" onclick="toGoCreateEvents()" id="add-event"><span class="material-symbols-outlined icon">add</span>Criar evento</p>
+        </div>
+        <div class="help">
+            <p>Bem-vindo à aba de eventos! Aqui é o seu espaço dedicado ao mundo da arte. Explore, pesquise e descubra uma variedade de eventos artísticos incríveis. Envolva-se na vibrante comunidade criativa, visualizando eventos já existentes ou criando os seus próprios.</p>
+        </div>
+        <div class="events">
+            {% for event in events %}
+                <div id="01" class="event">
+                    <span class="material-symbols-outlined header-event" style="font-size: 100px;">diversity_1</span>
+                    <p class="details">Evento: <span class="event-user">{{ event.title }}</span></p>
+                    <p class="details">Data: <span class="event-date">{{ event.event_date }}</span></p>
+                    <p class="click">Clique para detalhes</p>
+                </div>             
+            {% endfor %}
+        </div>
+    </div>
+    <div style="display: none;" id="content-new-event" class="content02">
+        <h2 class="title">Crie seu evento</h2>
+
+        <div class="help-box">
+            <p class="help">Você está na aba de criação de eventos! Aqui, você tem o poder de dar vida a um novo evento.</p>
+        </div>
+
+        <div class="form">
+            <form action="{% url 'global_events' %}" method="POST"> {% csrf_token %}
+                <h3 style="padding: 20px 0 20px 0;" class="tag">Preencha eventos reais</h3 style="padding: 20px 0 20px 0;">
+                <div class="in">
+                    <label for="eventname">Nome do evento</label>
+                    <input type="text" value="" id="eventname" name="eventname" maxlength="50" placeholder="Ex: Artes Makers" required>
+                </div>
+                <div class="in">
+                    <label for="age">Data do evento</label>
+                    <input type="date" value="" id="age" name="eventdate" placeholder="Data do evento" required>
+                </div>
+                <div class="in">
+                    <label for="eventhour">Horário do evento</label>
+                    <input type="time" value="" id="eventhour" name="eventhour" placeholder="Data do evento" required>
+                </div>
+                <h3 class="title">Informações para contato</h3>
+                <div class="in">
+                    <label for="email">Email</label>
+                    <input type="email" value="" id="email" name="email" placeholder="exemplo@e-mail.com" required>
+                </div>
+                <div class="in">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" value="" id="instagram" name="instagram" placeholder="Ex: @Usuario-Instagram" required>
+                </div>
+                <div class="in">
+                    <label for="whatsapp">Whatsapp (Brasil)</label>
+                    <input type="number" value="" id="whatsapp" name="whatsapp" placeholder="DDD + telefone" required>
+                </div>
+                <div class="in">
+                    <label for="link_event">Link de Site para evento</label>
+                    <input type="url" value="" id="link_event" name="link_event" placeholder="exemplo@e-mail.com">
+                </div>
+                <div class="in">
+                    <label for="description">Descriação</label>
+                    <textarea required name="description" id="description" cols="30" rows="8" maxlength="300" placeholder="Sua bio"></textarea>
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-save" value="Criar evento" style="cursor: pointer;">
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-cancel" onclick="toGoEvents()" value="Cancelar e voltar" style="cursor: pointer;">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="display: none;" id="content-my-events" class="content03">
+        <h2 class="title"><span onclick="toGoEvents()" class="back material-symbols-outlined">arrow_back</span>Meus eventos</h2>
+        <div class="box-events">
+            {% for my_ev in my_events  %}
+                <div class="my-event">
+                    <span class="material-symbols-outlined header-my-event" style="font-size: 50px;">diversity_1</span>
+                    <p class="name-my-event title">{{ my_ev.title }}</p>
+                    <p>{{ my_ev.event_date }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock main_content %}

@@ -20,6 +20,12 @@ if DEBUG:
 ALLOWED_HOSTS = ["*"]
 
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,6 +41,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'apps.auth_user',
+    'apps.profile_user',
+    'apps.system_art',
+    'apps.search_art',
+    'apps.events_user',
     
 ]
 
