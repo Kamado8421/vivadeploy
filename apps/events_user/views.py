@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import EventUser
 from django.contrib.auth.decorators import login_required
+from apps.auth_user.views import page_not_found
 
 @login_required(login_url='index')
 def global_events(request):
@@ -37,3 +38,11 @@ def global_events(request):
         
         return redirect('global_events')
     
+
+@login_required(login_url='index')
+def see_event(request, id_event=None):
+    try:
+        my_event = EventUser.objects.get(id=id_event)
+        return render(request, 'vivarte_pages/detail_event.html', {'ev': my_event})
+    except:
+        return HttpResponse(f"Ops!! nenhum evento encontrado com id: {id_event}")

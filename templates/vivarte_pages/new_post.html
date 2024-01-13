@@ -1,0 +1,39 @@
+<!-- new_post.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/profile.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div id="content-settings" class="content02">
+        <h2 class="title">Nova arte</h2>
+
+        <div class="help-box">
+            <p class="help">Poste uma nova arte na sua conta.</p>
+        </div>
+
+        <div class="form">{% csrf_token %}
+            <form action="{% url 'new_post' %}" method="POST">{% csrf_token %}
+                <div class="in">
+                    <label for="img-edit-profile">Arte</label>
+                    <input type="url" placeholder="Link da sua arte (formulário provisório)" name="img_post">
+                </div>
+                <div class="in">
+                    <label for="legend">Legenda</label>
+                    <textarea name="legend" id="legend" cols="30" rows="8" maxlength="200" placeholder="Sua legenda"></textarea>
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-save" value="Postar" style="cursor: pointer;">
+                </div>
+                <div class="in">
+                    <input type="submit" class="btn-cancel" onclick="toGoMyProfile()" value="Cancelar e voltar" style="cursor: pointer;">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock main_content %}

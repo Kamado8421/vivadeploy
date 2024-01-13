@@ -8,7 +8,7 @@ def page_not_found(request, exception):
 
 def index(request):
     if request.user.is_authenticated:
-        return redirect('my_profile')
+        return redirect('home')
     else:
          return render(request, template_name='index.html')
 

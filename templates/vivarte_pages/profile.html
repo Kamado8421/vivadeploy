@@ -32,13 +32,18 @@
                     <p>Seguidore: <span>{{info.followers}}</span></p>
                     <p>Publicações <span>{{info.quant_posts}}</span></p>
                     {% if not search %}
-                        <p id="new-pub">Nova publicação</p>
+                        <p onclick="new_post()" id="new-pub">Nova publicação</p>
                     {% elif search and not following %}
                         <p id="status-false">Seguir</p>
                     {% elif search and following %}
                         <p id="status-true">Seguindo</p>
                     {% endif %}
                 </div>
+                <script>
+                    function new_post(){
+                        location.href = "{% url 'new_post' %}";
+                    }
+                </script>
             </div>
             <div class="img-user">
                 <img src="{{info.url_profile}}" alt="you">

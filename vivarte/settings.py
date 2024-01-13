@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)gdju5bjas0bgkq+=545rslb(0ilj_as^-emq96ncgh8wfv935'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.system_art',
     'apps.search_art',
     'apps.events_user',
+    'apps.chat',
     
 ]
 

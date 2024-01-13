@@ -6,6 +6,7 @@ urlpatterns = [
     path('galery_virtual', views.galery_virtual, name='galery_virtual'),
     path('events/', include('apps.events_user.urls'), name='events'),
     path('search/', include('apps.search_art.urls')),
+    path('chat/', include('apps.chat.urls')),
 ]
 
 handler404 = 'apps.auth_user.views.page_not_found'

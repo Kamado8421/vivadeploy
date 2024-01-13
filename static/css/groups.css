@@ -1,0 +1,254 @@
+
+.content-chat {
+    background-image: linear-gradient(45deg, #ca7139, var(--orange-color), #ca7139);
+    height: 600px;
+    border-radius: 20px;
+    margin-top: 7%;
+    border: 1px solid var(--black-color);
+    width: 90%;
+    margin-left: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts {
+    width: 100px;
+    width: 300px;
+    height: 510px;
+    padding: 1px 10px 0 10px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border: 1px solid var(--black-color);
+    overflow: auto;
+}
+
+.contacts::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chats-containers {
+    display: flex;
+    align-items: center;
+}
+
+.chat {
+    width: 100%;
+    height: 510px;
+    padding: 1px 10px 0 10px;
+    border-radius: 10px;
+    border: 1px solid var(--black-color);
+    position: relative;
+    
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.contact:hover {
+    background-color: #ffffff3d;
+}
+
+.contact p {
+    font-size: 12px;
+}
+
+.contact img {
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 2px;
+    margin-right: 10px;
+}
+
+.header-chat {
+    background-color: #ffffff3d;
+    padding: 8px;
+    width: 94%;
+    border-radius: 10px;
+    border: 1px solid var(--black-color);
+    margin: 10px;
+}
+
+.content-header-chat {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+.content-header-chat img {
+
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.messages {
+    margin-top: 10px;
+    height: 400px;
+    width: 100%;
+    border: 1px solid var(--black-color);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.messages::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+
+
+.help {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+}
+
+.message {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #00000053;
+    max-width: 40%;
+    margin-top: 10px; 
+}
+
+.message p {
+    font-size: 14px;
+} 
+
+.message .hour {
+    font-size: 10px;
+    text-align: right;
+    padding: 5px 0 0 0;
+}
+
+.in {
+    position: sticky; /* Muda o posicionamento do elemento filho para absoluto */
+    bottom: 10px; /* Coloca o elemento no final do contêiner pai */
+    width:95%;
+    margin: auto;
+    z-index: 9999;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ffffff41;
+    margin-top: 40%;
+    border: 1px solid var(--black-color);
+}
+
+.in form {
+    display: flex;
+    align-items: center;
+}
+
+.in form input, button {
+    height: 32px;
+    border: none;
+    outline: none;
+    padding: 0px 10px 0px 10px;
+    border-radius: 5px;
+}
+
+.in form button {
+    background-color: #3faceb;
+    color: var(--black-color);
+    cursor: pointer;
+    color: #fff;
+}
+
+.in form input {
+    width: 90%;
+}
+.sender {
+    margin-left: 20px;
+    background-image: linear-gradient(45deg, var(--blue-color), #3faceb);
+}
+
+.user-sender{
+    border-bottom: 0.5px dashed #fff;
+    color: #fff;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.contact p {
+    font-weight: bold;
+}
+
+.user-sender:hover {
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.push-me {
+    margin-left: auto;
+    background-image: linear-gradient(45deg, yellow, #f4f49c);
+    margin-right: 20px;
+}
+
+.content-header-chat p {
+    font-weight: bold;
+    color: var(--black-color);
+}
+
+.settings-collab, .new-collab{
+    color: var(--black-color);
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.settings-collab:hover, .new-collab:hover {
+    cursor: pointer;
+    background-color: #ffffffca;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    display: none;
+  }
+  
+  .chat-mobile {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+  }
+  
+  .contacts {
+    margin-top: 10px;
+    width: 100%;
+    background-color: var(--orange-color);
+  }
+  
+  
+  .chat {
+    background-color: var(--orange-color);
+  }
+  
+  .in {
+    z-index: 9995;
+  }
+}
+

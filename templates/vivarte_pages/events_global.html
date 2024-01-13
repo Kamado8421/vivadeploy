@@ -27,12 +27,12 @@
         </div>
         <div class="events">
             {% for event in events %}
-                <div id="01" class="event">
+                <a style="text-decoration: none;" href="{% url 'see_event' id_event=event.id %}" id="{{event.id}}" class="event">
                     <span class="material-symbols-outlined header-event" style="font-size: 100px;">diversity_1</span>
                     <p class="details">Evento: <span class="event-user">{{ event.title }}</span></p>
                     <p class="details">Data: <span class="event-date">{{ event.event_date }}</span></p>
                     <p class="click">Clique para detalhes</p>
-                </div>             
+                </a>             
             {% endfor %}
         </div>
     </div>

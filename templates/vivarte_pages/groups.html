@@ -1,0 +1,99 @@
+ <!-- groups.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/groups.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div class="content content-chat">
+        <h2 class="title">Comunidade</h2>
+        <div class="chats-containers">
+            <div class="contacts">
+                <h4 id="title" class="title">Groupos <span class="material-symbols-outlined new-collab">add</span></h4>
+                <div class="contact">
+                    <p><span class="tag">#</span>VIVARTE</p>
+                </div>
+                <div class="contact">
+                    <p><span class="tag">#</span>CAAHS</p>
+                </div>
+            
+            </div>
+            <div class="chat">
+                <div class="header-chat">
+                    <div class="content-header-chat">
+                        <span class="material-symbols-outlined settings-collab">settings</span>
+                        <p><span class="tag">#</span>VIVARTE</p>
+                    </div>
+                </div>
+                <div class="messages">
+                    <p class="help">Comunidade para projetos</p>
+                    <div class="message sender">
+                        <p style="font-size: 12px;" class="user-sender"><span class="tag">@</span>luciano_mendesz9</p>
+                        <p>Iae mano, qual a boa?</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    <div class="message push-me">
+                        <p>Fala parceiro. Tô traquilo kk</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    
+                    <div class="in">
+                        <form action="#">
+                            <input type="text" maxlength="300" placeholder="Messagem" required>
+                            <button type="submit" class="material-symbols-outlined">send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-mobile">
+    <div class="chat">
+
+                <div class="header-chat">
+
+                    <div class="content-header-chat">
+                        <span class="material-symbols-outlined settings-collab">settings</span>
+                        <p><span class="tag">#</span>VIVARTE</p>
+                    </div>
+                </div>
+                <div class="messages">
+                    <p class="help">Comunidade para projetos</p>
+                    <div class="message sender">
+                        <p style="font-size: 8px;" class="user-sender"><span class="tag">@</span>luciano_mendesz9</p>
+                        <p>Iae mano, qual a boa?</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    <div class="message push-me">
+                        <p>Fala parceiro. Tô traquilo kk</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    
+                    <div class="in">
+                        <form action="#">
+                            <input type="text" maxlength="300" placeholder="Messagem" required>
+                            <button type="submit" class="material-symbols-outlined">send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts">
+
+                <h4 id="title" class="title">Groupos <span class="material-symbols-outlined new-collab">add</span></h4>
+
+                <div class="contact">
+                    <p><span class="tag">#</span>VIVARTE</p>
+                </div>
+                <div class="contact">
+                    <p><span class="tag">#</span>CAAHS</p>
+                </div>
+            
+            </div>
+    </div>
+{% endblock main_content %}
+

@@ -1,0 +1,100 @@
+<!-- chat.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block username_menu %}{{user.username}}{% endblock username_menu %}
+{% block username_profile %}{{info.url_profile}}{% endblock username_profile %}
+
+{% block css_externo %}
+    {% static 'css/chat.css' %}
+{% endblock %}
+
+{% block main_content %}
+    <div class="content content-chat">
+        <h2 class="title">Chats</h2>
+        <div class="chats-containers">
+            <div class="contacts">
+                <h4 class="title">Conversas</h4>
+                <div class="contact">
+                    <img src="img/logo.png" alt="">
+                    <p><span class="tag">@</span>teste01</p>
+                </div>
+                <div class="contact">
+                    <img src="img/logo.png" alt="">
+                    <p><span class="tag">@</span>teste02</p>
+                </div>
+            
+            </div>
+            <div class="chat">
+                <div class="header-chat">
+                    <div class="content-header-chat">
+                        <img src="img/logo.png" alt="">
+                        <p><span class="tag">@</span>teste03</p>
+                    </div>
+                </div>
+                <div class="messages">
+                    <p class="help">Inicie uma coneversa</p>
+                    <div class="message sender">
+                        <p>Iae mano, qual a boa?</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    <div class="message push-me">
+                        <p>Fala parceiro. Tô traquilo kk</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    
+                    <div class="in">
+                        <form action="#">
+                            <input type="text" maxlength="300" placeholder="Messagem" required>
+                            <button type="submit" class="material-symbols-outlined">send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-mobile">
+    <div class="chat">
+
+                <div class="header-chat">
+
+                    <div class="content-header-chat">
+                        <img src="img/logo.png" alt="">
+                        <p><span class="tag">@</span>marwui83h333</p>
+                    </div>
+                </div>
+                <div class="messages">
+                    <p class="help">Inicie uma coneversa</p>
+                    <div class="message sender">
+                        <p>Iae mano, qual a boa?</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    <div class="message push-me">
+                        <p>Fala parceiro. Tô traquilo kk</p>
+                        <p class="hour">13:22</p>
+                    </div>
+                    
+                    <div class="in">
+                        <form action="#">
+                            <input type="text" maxlength="300" placeholder="Messagem" required>
+                            <button type="submit" class="material-symbols-outlined">send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts">
+
+                <h4 class="title">Conversas</h4>
+
+                <div class="contact">
+                    <img src="img/logo.png" alt="">
+                    <p><span class="tag">@</span>marwui83h333</p>
+                </div>
+                <div class="contact">
+                    <img src="img/logo.png" alt="">
+                    <p><span class="tag">@</span>marwui83h333</p>
+                </div>
+            
+            </div>
+    </div>
+{% endblock main_content %}
