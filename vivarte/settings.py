@@ -17,7 +17,7 @@ DEBUG = False
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".versel.app"]
 
 
 STATIC_URL = '/static/'
